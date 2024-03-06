@@ -14,7 +14,7 @@ resource "aws_instance" "instance_name" {
         type        = "ssh"
         host        = self.public_ip
         user        = "ubuntu"
-        private_key = file("/Users/lipsadas/.ssh/id_rsa")
+        private_key = file("./id_rsa")
         timeout     = "4m"
     }
     tags = {
