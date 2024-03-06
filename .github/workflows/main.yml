@@ -43,10 +43,10 @@ jobs:
         terraform validate
 
         echo "** Running Terraform Plan**"
-        terraform plan
+        terraform plan -lock=false
 
         echo "** Running Terraform Apply**"
-        terraform apply -auto-approve
+        terraform apply -auto-approve -lock=false
       working-directory: ${{ github.event.inputs.tfpath }}
     - name: Terraform Destroy
       run: |
